@@ -16,6 +16,7 @@ def on_message(mosq, obj, msg):
 	p.stdin.write(msg.payload)
 	p.stdin.close()
 
+# don't accumulate zombies, we don't care anyway
 signal.signal(signal.SIGCHLD, signal.SIG_IGN)
 
 client.on_connect = on_connect

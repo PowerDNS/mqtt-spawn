@@ -32,3 +32,7 @@ Example message from actual usage:
         DNSKEY_powerdnssec_org -> DNSKEY_powerdnssec_org;
     }
     EOF
+
+Mandatory screencast:
+
+![screencast-oneshot](screencast-oneshot.gif)

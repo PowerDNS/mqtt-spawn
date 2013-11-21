@@ -1,19 +1,21 @@
 mqtt-spawn
 ==========
 
-spawn a process per MQTT message, provide message on stdin
+Spawn a process per MQTT message, provide message on stdin
 
-usage:
+Usage:
 
     ./mqtt-spawn.py <host> <cmd> <topic1> <topic2> ..
 
-example:
+Example:
 
     ./mqtt-spawn.py 172.16.68.10 'dotty -' oneshot/dot
 
-will plot every graphviz message received on `oneshot/dot`
+will plot every graphviz message received on `oneshot/dot`.
 
-example message from actual usage:
+(My actual usage is `./mqtt-spawn.py 172.16.68.10 'sponge ../test.dot' oneshot/dot` with GraphViz.app for OS X opened on `test.dot`. `cat > ../test.dot` also works but is not as clean).
+
+Example message from actual usage:
 
     mosquitto_pub -s -t oneshot/dot << EOF
     digraph oneshot {
